@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <math.h>
 
 
 
@@ -134,7 +135,7 @@ int main(int argc, char *argv[]) {
 	
 	
 	
-	*/
+	
 	//9 decimal to binary
 	int i,sayi;
 	int a[10];
@@ -151,6 +152,175 @@ int main(int argc, char *argv[]) {
 	
 	
 	
+	//10 girilen 4 basamaklý sayýnýn ilk 2 basamagýnýn karesi ile son 2 basamagýnýn karesi toplamý sayýya eþit ise orjinal sayý
+	int sayi,ilk2,son2;
+	printf("Sayiyi giriniz.");
+	scanf("%d",&sayi);
+	ilk2=sayi/100;
+	son2=sayi%100;
+	//printf("%d\n",ilk2);
+	//printf("%d\n",son2);
+	if(pow(ilk2,2)+pow(son2,2)==sayi) printf("%d sayisi orjinal sayýdýr.",sayi);
+	else printf("%d sayisi orjinal sayý degildir.",sayi);
+	
+	
+	// 11 girilen 4 basamaklý saynýn basamaklarýndaki sayýlarý tahmin etme
+	int sayi,birler,onlar,yuzler,binler;
+	printf("Sayiyi giriniz.");
+	scanf("%d",&sayi);
+	binler=sayi/1000;
+	yuzler=(sayi%1000)/100;
+	onlar=(sayi%100)/10;
+	birler=sayi-(binler*1000)-(yuzler*100)-(onlar*10);
+	printf("Binler:%d",binler);
+	printf("Yuzler:%d",yuzler);
+	printf("Onlar:%d",onlar);
+	printf("Birler:%d",birler);
+	
+	
+	// 12 sayi bulmaca oyunu hak=10
+	int tahmin,sayac=0;
+	int sayi=rand()%1000;
+	while(sayac!=10){
+		printf("Tahmin gir.");
+		scanf("%d",&tahmin);
+		sayac++;
+		if(tahmin==sayi){
+			printf("Tebrikler %d kerede sayiyi bildiniz.",sayac);
+			break;
+		}
+		else{
+			if(tahmin<sayi) printf("Tahmini yukselt\n");
+		    else if (tahmin>sayi) printf("Tahmini dusur\n");
+		}
+		printf("Kalan tahmi hakkiniz : %d\n",10-sayac);
+		
+		
+	}
+	
+	
+	// 13 girilen sayýnýn yaklaþýk olarak karakok hesaplama
+	int i=1,a,b,sayi;
+	printf("Sayiyi giriniz.");
+	scanf("%d",&sayi);
+	for(i=1;i<sayi;i++){
+		if((i*i)>sayi)
+	}
+	
+	
+	//14 kok hesaplama
+	int a,b,c,x,y,delta=0;
+	printf("a giriniz\n");
+	scanf("%d",&a);
+	printf("b giriniz\n");
+	scanf("%d",&b);
+	printf("c giriniz\n");
+	scanf("%d",&c);
+	delta=(b*b)-(4*a*c);
+	if(delta==0){
+		x=(-b)/(2*a);
+		printf("Tek kok vardýr ve o da %d dir",x);
+	}
+	else if(delta<0)
+		printf("Reel Kok yoktur.");
+	else {
+		x=(-b-(sqrt(delta)/2*a));
+		y=(-b+(sqrt(delta)/2*a));
+		printf("iki kok vardir 1:%d  ---- 2:%d",x,y);
+	}
+	
+	
+	// 15 1 ile 100 arasýnda kac asal sayý var
+	int sayi=8,asal=4;
+	while(sayi<100){
+		if((sayi%2)!=0)
+		{
+			if((sayi%3)!=0)
+			{
+				if((sayi%5)!=0)
+				{
+					if((sayi%7)!=0) asal++;
+				}
+			}
+		}
+		sayi++;
+	}
+	printf("Asal sayý adedi %d",asal);
+	
+	
+    // 16 smith sayýsý olup olmadýgýný bulma
+    
+    
+    int toplam1=0,sayi,i,toplam2=0,x,y;
+    printf("Sayi gir");
+    scanf("%d",&sayi);
+    x=sayi;
+    while(sayi>10)
+	{
+    	toplam1=toplam1+(sayi%10);
+    	sayi=sayi/10;
+	}
+	toplam1=toplam1+sayi;
+	while(x>1)
+	{
+		if((x%i)==0)
+		{
+			if(i==2 || i==3 || i==5 || i==7)
+          {
+            toplam2=toplam2+i;
+             x=x/i;
+          }
+          else
+		  {
+		  	y=i;
+		  	while(y>10)
+			  {
+			  	toplam2=toplam2+y%10;
+			  	y=y/10;
+			  }
+			  toplam2=toplam2+y;
+			  x=x/i;
+		  }
+		}
+	}
+	
+	if(toplam1==toplam2) printf("%d sayisi smith sayisidir.!!\n",sayi);
+	
+	else printf("%d sayisi smith sayisi degildir.!!\n",sayi);
+	
+	*/
+	
+	
+	//17 soru 55
+	int enb,enk,i,top,a;
+	float b,ort,fark;
+	scanf("%d",&a);
+	enk=a;
+	enb=a;
+	
+	
+	while(i<9)
+	{
+		printf("Sayi giriniz.\n");
+		scanf("%d",&a);
+		if(a<enk) enk=a;
+		else if (a>enb) enb=b;
+		top=top+a;
+		i++;
+	}
+	b=(enb+enk)/2;
+	ort=top/10;
+	fark=ort-b;
+	printf("%f",fark);
+	
+	
+	
+	
+	
+	
+	
 	
 	return 0;
 }
+ 
+
